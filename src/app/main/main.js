@@ -1,10 +1,10 @@
 var React = require('react');
 import { Link } from 'react-router';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 import './main.scss';
 var logo = require('../../assets/test.png');
-import {config} from '../shared/config';
+
 
 class Main extends React.Component {
     constructor() {
@@ -40,7 +40,7 @@ class Header extends React.Component {
         this.state = {username: 'hyw'};
     }
     logout(){
-        browserHistory.push('/login');
+        hashHistory.push('/login');
     }
     render() {
         return (

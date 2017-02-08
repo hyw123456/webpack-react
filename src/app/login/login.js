@@ -5,7 +5,7 @@ import './login.scss';
 var React = require('react');
 var loginImg = require('../../assets/test.png');
 
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 
 class Login extends React.Component {
@@ -17,7 +17,7 @@ class Login extends React.Component {
 
     login(e) {
         console.log(this.refs.username.value);
-        browserHistory.push('/main');
+        hashHistory.push('/main');
     }
 
     render() {
