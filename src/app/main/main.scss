@@ -1,0 +1,53 @@
+@import "src/app/sup.scss";
+
+.login-toobar {
+  width: 100%;
+  height: 21px;
+  background-color: #424242;
+  .login-toobar-content {
+    width: $content-width;
+    margin: auto;
+    text-align: right;
+    color: white;
+    font-size: 10px;
+    line-height: 21px;
+    i{
+      font-size: 10px;
+      margin-left: 10px;
+      margin-right: 6px;
+    }
+  }
+}
+
+.router-toobar {
+  width: 100%;
+  height: 50px;
+  background-color: $styleColor;
+  box-shadow: 0px 5px 5px gainsboro;
+  .router-toobar-content {
+    width: $content-width;
+    margin: auto;
+    height: 50px;
+    @extend %dis-flex;
+    @extend %flex-vertical-center;
+    img{
+      height: 32px;
+    }
+
+    a{
+      text-decoration: none;
+      color: white;
+      width: 10%;
+      text-align: center;
+      height: 100%;
+      line-height: 50px;
+      &:hover{
+        background-color: #ffb319;
+      }
+    }
+    .active{
+      background-color: #ffb319;
+    }
+
+  }
+}

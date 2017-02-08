@@ -1,0 +1,165 @@
+$styleColor :  #ea5404;
+$content-width: 1200px; // 宽度
+%overShowPoing {
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+/*------------------集成flex start------------------------*/
+/**flex 兼容写法 定义flex布局**/
+%dis-flex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/**flex 兼容写法 定义flex布局**/
+%dis-inline-flex{
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+/**flex 兼容写法 垂直居中**/
+%flex-vertical-center {
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+/**flex 兼容写法 垂直居上**/
+%flex-vertical-start {
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  -webkit-box-align: start;
+}
+
+/**flex 兼容写法 垂直居下**/
+%flex-vertical-end {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -o-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/**flex 兼容写法 水平居中**/
+%flex-horizontal-center {
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  -webkit-box-pack: center;
+}
+
+/**flex 兼容写法 水平居左**/
+%flex-horizontal-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/**flex 兼容写法 水平居右**/
+%flex-horizontal-end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/**flex 兼容写法 水平居两边**/
+%flex-horizontal-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/**flex 兼容写法 纵向排列**/
+%flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+
+/**flex 兼容写法 子元素纵向换行**/
+%flex-vw {
+  /*-webkit-box-lines: multiple;*/
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* 子元素-显示在从左向右（从上向下）第1个位置，用于改变源文档顺序显示 */
+@mixin flex-num($value : 1 1 auto) {
+  -webkit-box-flex: $value;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $value;         /* OLD - Firefox 19- */
+  box-flex: $value;
+  //width: 20%;               /* For old syntax, otherwise collapses. */ 兼容写法，手动指定宽度
+  -ms-flex: $value;              /* IE 10 */
+  flex: $value;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex: $value;          /* Chrome */
+}
+/*------------------集成flex end------------------------*/
+
+/*--------------需要些兼容写法的mixin start------------------*/
+// 过渡
+@mixin x-transition($value : all .3s ease) {
+  transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  -webkit-transition: $value;
+}
+
+// 过渡
+@mixin x-box-shadow($value : 0 -1px 8px rgba(80, 80, 80, 0.3)) {
+  box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+  -webkit-box-shadow: $value;
+}
+
+// 圆角
+@mixin x-border-radius($value : .3rem) {
+  border-radius:$value;
+  -moz-border-radius:$value;
+  -o-border-radius:$value;
+  -webkit-border-radius:$value;
+}
+
+// 文本溢出省略号
+@mixin text-overflow($value: 1) {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $value;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+  max-width: 90%;
+}
+/*--------------需要些兼容写法的mixin end------------------*/

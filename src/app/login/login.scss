@@ -1,0 +1,71 @@
+@import "src/app/sup.scss";
+
+.login-div {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-image: url("../../assets/test.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  h1 {
+    font-size: 50px;
+    margin-top: 200px;
+    color: $styleColor;
+    font-family: 黑体;
+  }
+  img {
+    margin: 50px 0px;
+    display: inline-block;
+  }
+
+  .login-box {
+    display: inline-block;
+    width: 250px;
+    .login-title {
+      background-color: rgba(0, 0, 0, .45);
+      padding: 10px 10px;
+      color: white;
+    }
+    .login-content {
+      margin-top: 5px;
+      background-color: rgba(0, 0, 0, .45);
+      padding-top: 30px;
+      .div-input {
+        width: 80%;
+        margin: 10px auto;
+        position: relative;
+        .icon-login-user {
+          @extend %icon;
+          background-image: url("../../assets/test.png");
+        }
+        .icon-login-psw {
+          @extend %icon;
+          background-image: url("../../assets/test.png");
+        }
+        input {
+          width: 172px;
+          margin-left: 28px;
+        }
+      }
+      button {
+        width: 80%;
+        margin: 25px auto;
+      }
+    }
+  }
+
+}
+%icon{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 28px;
+  height: 28px;
+
+  background-size: 18px 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #aaabab;
+}
