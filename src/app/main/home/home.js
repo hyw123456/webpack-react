@@ -22,7 +22,8 @@ class Home extends React.Component {
                 <Navbar routers={this.state.routers}>
                    <div> <i className="iconfont icon-jia"></i>什么事吗标题</div>
                 </Navbar>
-
+                <img src="img/test/test.png" alt="" />
+                <div className="css-img"></div>
             </div>
         );
     }

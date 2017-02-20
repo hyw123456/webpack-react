@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  background-image: url("../../assets/test.png");
+  background-image: url("../../../img/test/test.png");
   background-size: 100% 100%;
   position: absolute;
   top: 0px;
@@ -38,11 +38,11 @@
         position: relative;
         .icon-login-user {
           @extend %icon;
-          background-image: url("../../assets/test.png");
+          background-image: url("../../../img/test/test.png");
         }
         .icon-login-psw {
           @extend %icon;
-          background-image: url("../../assets/test.png");
+          background-image: url("../../../img/test/test.png");
         }
         input {
           width: 172px;

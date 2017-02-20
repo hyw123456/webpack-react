@@ -19,7 +19,7 @@ module.exports = webpackMerge(webpackConfig, {
             'process.env': {
                 NODE_ENV: JSON.stringify(ENV)
             }
-        }),
+        })
     ],
 
     devServer: {

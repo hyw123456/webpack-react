@@ -1,9 +1,9 @@
 var React = require('react');
 import { Link } from 'react-router';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 import './main.scss';
-var logo = require('../../assets/test.png');
+
 
 
 class Main extends React.Component {
@@ -22,7 +22,7 @@ class Main extends React.Component {
                 </div>
                 <div className="router-toobar">
                     <div className="router-toobar-content">
-                        <img src={logo} alt="" />
+
                         <Link to="/main/home" activeClassName="active">首页</Link>
                         <Link to="/main/ohter" activeClassName="active">其他</Link>
                     </div>
@@ -40,7 +40,7 @@ class Header extends React.Component {
         this.state = {username: 'hyw'};
     }
     logout(){
-        hashHistory.push('/login');
+        browserHistory.push('/login');
     }
     render() {
         return (

@@ -3,9 +3,9 @@
  */
 import './login.scss';
 var React = require('react');
-var loginImg = require('../../assets/test.png');
 
-import { hashHistory } from 'react-router';
+
+import { browserHistory } from 'react-router';
 
 
 class Login extends React.Component {
@@ -17,14 +17,13 @@ class Login extends React.Component {
 
     login(e) {
         console.log(this.refs.username.value);
-        hashHistory.push('/main');
+        browserHistory.push('/main');
     }
 
     render() {
         return (
             <div className="login-div">
                 <h1>标题</h1>
-                <img src={loginImg} alt="" style={{width: '50px'}}/><br/>
                 <div className="login-box">
                     <div className="login-title">
                         请输入帐号密码

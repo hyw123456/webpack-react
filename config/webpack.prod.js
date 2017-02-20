@@ -32,10 +32,10 @@ module.exports = webpackMerge(commonConfig, {
 
         new ExtractTextPlugin('[name].[hash].css'),
 
-        // new CopyWebpackPlugin([{
-        //     from: helpers.root('src', 'assets'),
-        //     to: helpers.root('dist', 'assets')
-        // }]),
+        new CopyWebpackPlugin([{
+            from: helpers.root('img'),
+            to: helpers.root('dist', 'img')
+        }]),
 
 
     ]
