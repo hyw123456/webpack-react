@@ -1,6 +1,6 @@
 var React = require('react');
 import { Link } from 'react-router';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 import './main.scss';
 
@@ -39,7 +39,7 @@ class Header extends React.Component {
         this.state = {};
     }
     logout(){
-        browserHistory.push('/login');
+        hashHistory.push('/login');
     }
     render() {
         return (
