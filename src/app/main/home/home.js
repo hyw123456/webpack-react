@@ -4,26 +4,38 @@
 var React = require('react');
 
 import './home.scss';
-import Navbar from '../../shared/navbar/navbar';
 
 
 class Home extends React.Component {
     constructor() {
         super();
         this.state = {
-            routers: [{name: '首页',router:'/main/home'},{name: '首页2'}]
+                data: 'da'
         };
+      this.changeInput = this.changeInput.bind(this);
+
+    }
+    componentDidMount() {
+        console.log('主页已插入真实dom');
     }
 
+    componentWillUpdate() {
+        console.log('主页正要重新渲染');
+    }
 
+    changeInput(event){
+            console.log(event.target.value);
+            this.setState({
+                data: event.target.value
+            });
+    }
     render() {
+        let data = this.state.data;
         return (
             <div className="body-content">
-                <Navbar routers={this.state.routers}>
-                   <div> <i className="iconfont icon-jia"></i>什么事吗标题</div>
-                </Navbar>
-                <img src="img/test/test.png" alt="" />
-                <div className="css-img"></div>
+                <input type="text" onChange={this.changeInput}/>
+                {data}
+                <input type="text"/>
             </div>
         );
     }

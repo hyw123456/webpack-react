@@ -15,7 +15,20 @@ module.exports = {
                 include: helpers.root('src'),
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015']
+                    "presets": ["react", "es2015"],
+                    "env": {
+                        "development": {
+                            "plugins": [["react-transform", {
+                                "transforms": [{
+                                    "transform": "react-transform-hmr",
+
+                                    "imports": ["react"],
+
+                                    "locals": ["module"]
+                                }]
+                            }]]
+                        }
+                    }
                 }
             }, {
                 test: /.scss$/,
