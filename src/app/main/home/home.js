@@ -35,7 +35,6 @@ class Home extends React.Component {
             <div className="body-content">
                 <input type="text" onChange={this.changeInput}/>
                 {data}
-                <input type="text"/>
             </div>
         );
     }
