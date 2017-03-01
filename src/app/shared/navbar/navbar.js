@@ -3,7 +3,7 @@
  */
 var React = require('react');
 import './navbar.scss';
-import {Link,browserHistory} from 'react-router';
+import {Link,hashHistory} from 'react-router';
 
 
 class Navbar extends React.Component {
@@ -15,7 +15,7 @@ class Navbar extends React.Component {
         console.log('导航栏正要重新渲染');
     }
     back(){
-        browserHistory.goBack();
+        hashHistory.goBack();
     }
     render() {
         let routers = this.props.routers;
